@@ -1,0 +1,31 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script language="javascript" type="text/javascript" src="libraries/hammer.min.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+  <!-- uncomment lines below to include extra p5 libraries -->
+  <!--<script language="javascript" src="libraries/p5.dom.js"></script>-->
+  <script language="javascript" src="libraries/p5.sound.js"></script>
+  <script language="javascript" type="text/javascript" src="face.js"></script>
+  <!-- <script language="javascript" type="text/javascript" src="eyeball.js"></script> -->
+  <script language="javascript" type="text/javascript" src="eyes.js"></script>
+  <script language="javascript" type="text/javascript" src="mouth.js"></script>
+  <script language="javascript" type="text/javascript" src="hair.js"></script>
+  <script language="javascript" type="text/javascript" src="character.js"></script>
+  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+  <!-- this line removes any default padding and style. you might only need one of these values set. -->
+  <style> body {transform: translateZ(0); padding: 0; margin: 0; background-color: rgba(200,200,200,1);} canvas {position: relative; margin:0 auto; display: block;} #more {position: fixed; bottom: 0px; right: 20px; z-index: 999; cursor: pointer;} #more img {width: 40px; height: 40px;} #more p {top: -12px; left: -10px;position: relative; display: inline-block; font-family: sans-serif;}</style>
+</head>
+
+<body>
+  <div onclick="initChar();" id="more"> <p>swipe up forever or click here</p> </div>
+  <script>
+    var hm = new Hammer(document.documentElement);
+    hm.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+    hm.on("swipeup", function(e) {
+      initChar();
+    })
+  </script>
+</body>
+</html>
